@@ -1,18 +1,10 @@
-# CI: lint, test, build & push for frontend + backend
+name: Docker  Three-tier-Project CI
+
 on:
-  pull_request:
-    branches: [ "**" ]
   push:
-    branches: [ main ]
-  workflow_dispatch:
-
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
-
-permissions:
-  contents: read
-  id-token: write
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
   test-backend:
